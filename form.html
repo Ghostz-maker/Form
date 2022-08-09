@@ -1,0 +1,234 @@
+<html>
+    <head><title>https://form/</title></head>
+
+
+    <!-----<script src="form.js"></script>---->
+
+    <!---<link rel="stylesheet" href="form.css"> ---->
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+
+    <body bgcolor="LIGHTBLUE">
+        <form>
+
+            <DIV id="NAME">
+            FIRST NAME <INPUT TYPE="TEXT" PLACEHOLDER="FIRST NAME">
+
+            MIDDLE NAME <INPUT TYPE="TEXT" PLACEHOLDER="MIDDLE NAME">
+
+            LASTNAME <INPUT TYPE="TEXT" PLACEHOLDER="LAST NAME"><br><br><br>
+
+            FATHER NAME <Input TYPE="TEXT" PLACEHOLDER="FATHER NAME">
+
+            MOTHER NAME <Input TYPE="TEXT" PLACEHOLDER="MOTHER NAME">
+            </DIV><br>
+            <DIV id="GENDER">
+                GENDER <INPUT TYPE="RADIO" NAME="G">MALE
+                    <INPUT TYPE="RADIO" NAME="G">FEMALE
+                        <INPUT TYPE="RADIO" NAME="G">OTHERS
+            </DIV><br>
+
+            <DIV id="CALENDER">
+                DATE OF BIRTH <INPUT TYPE="date" min="1990-01-01" max="1997-12-31"> <!----format accepted for min and max in date yyyy-month-date -->
+            </DIV><br>
+
+            <DIV id="PHOTO&SIGN">
+                PHOTO
+                UPLOAD PHOTO <INPUT TYPE="file">
+
+                SIGNATURE
+                UPLOAD SIGNATURE <INPUT TYPE="FILE">
+            </DIV>
+<br>
+            <DIV id="contact">
+                EMAIL <INPUT TYPE="text" PLACEHOLDER="EMAIL">
+                 ALTERNATE EMAIL <INPUT TYPE="TEXT" PLACEHOLDER="EMAIL"><br><br>
+
+                CONTACT NO. <INPUT TYPE="TEXT" PLACEHOLDER="CONTACT NO.">
+                 ALTERNATE CONTACT NO. <INPUT TYPE="TEXT" PLACEHOLDER="CONTACT NO.">
+             </DIV><br>
+
+             <id="ADDRESS">
+                <fieldset>
+                 <legend>COMMUNICATION ADDRESS</legend><br>
+                 HOUSE NO. <INPUT TYPE="TEXT">
+                    ADDRESS <INPUT TYPE="TEXT">
+                        STATE <select style="width:120px; height:30px;" onchange="makeSubmenu(this.value)">
+                            <option value="">Select State</option>
+                            <option>Jharkhand</option>
+                            <option>Uttar Pradesh</option>
+                            <option>Andhra Pradesh</option>
+                            <option>Arunachal Pradesh</option>
+                            <option>Assam</option>
+                            <option>Bihar</option>
+                            <option>Chhattisgarh</option>
+                            <option>Goa</option>
+                            <option>Gujarat</option>
+                            <option>Haryana</option>
+                            <option>Punjab</option>
+                            <option>Himachal Pradesh</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                            <option>Madhya Pradesh</option>
+                            <option>Maharashtra</option>
+                            <option>Manipur</option>
+                            <option>Meghalaya</option>
+                            <option>Mizoram</option>
+                            <option>Nagaland</option>
+                            <option>Odisha</option>
+                            <option>Rajasthan</option>
+                            <option>Sikkim</option>
+                            <option>Tamil Nadu</option>
+                            <option>Telangana</option>
+                            <option>Tirpura</option>
+                            <option>Uttarakhand</option>
+                            <option>West Bengal</option>
+                        </select>
+                        DISTRICT <select id="District" style="width:120px; height:30px;">
+                            <option value="">Select District</option>
+                            </select>
+                            <script type="text/javascript">
+
+                                var citiesByState = {
+                                Jharkhand:["Bokaro","Chatra","Deogarh","Dhanbad","Dumka","East Singhbhum","Garhwa","Giridih","Godda","Gumla","Hazaribag","Jamtara","Khunti","Koderma","Latehar","Lohardaga","Pakur","Palamu","Ramgarh","Ranchi","Sahibganj","Seraikela Kharsowan","Simdega","West Singhbhum"],
+                                'Uttar Pradesh':["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi (Chatrapati Sahuji Maharaj Nagar)","Amroha (JP Nagar)","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bhijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur (Panchsheel Nagar)","Hardoi","Hathras","Jaulan","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kanshiram Nagar (Kansganj) ","Kaushambi","Kaushinagar (Padrouna)","Lakhimpur-Kheri","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampura","Saharanpur","Sambhal (Bhim Nagar)","Sant Kabir Nagar","Shahjahanpur","Shamli (Prabuddh Nagar)","Shravasti","Siddharth Nagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"],
+                                'Andhra Pradesh': ["Anantapuram","Chittoor","East Godavari","Guntur","Krishna","Kurnool","Prakasam","Srikakulam","Sri Potti Sriramulu Nellore","Visakhapatnam","Vizianagram","West Godavari","YSR District, kadapa (Cuddapah)"],
+                                'Arunachal Pradesh':["Anjaw","Changlang","Dibang Valley","East Kameng","East Siang","Kamle","Kra Daadi","Kurung Kumey","Lepa Rada","Lohit","Longding","Lower Dibang Valley","Lower Siang","Lower Subansiri","Namsai","Pakke Kessang","Papum Pare","Shi Yomi","Siang","Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang"],
+                                Assam:["Baksa","Barpeta","Biswanath","Bongaigaon","Cachar","Charaideo","Chirang","Darrang","Dhemaji","Dhubri","Dibrugarh","Dima Hasao (North Cachar Hills)","Goalpara","Golaghat","Hailakandi","Hojai","Jorhat","Kamrup","Kamrup Metropolitian","Karbi Anglong","Karimganj","Kokrajhar","Majuli","Morigaon","Nagaon","Nalberi","Sivasagar","Sonitpur","South Salamara Mankachar","Tinsukia","Udalguri","West Kabri Anglong"],
+                                Bihar:["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxer","Darbhanga","East Champaran (Moti Hari)","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur(Bhabua)","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger(Monghyr)","Muzzaffarpur","Nalanda","Nawada","Patna","Purnia (Purnea)","Rohtas","Saharsa","Samastipur","Saran","Shekhpura","Sheohar","Sitamarhi","Siwan","Supaul","Samastipur","West Champaran"],
+                                Chhattisgarh:["Balod","Blaoda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada (South Bastar)","Durg","Gariyaband","Janjgir-Champa","Jashpur","Kabirdham(Kawardha)","Kanker(North Bastar)","Kondagaon","Korba","Korea (Koriya)","Mahasamund","Mungeli","Narayanpur","Raipur","Raigarh","Rajnandgaon","Sukma","Sura"],
+                                Goa:["North Goa","South Goa"],
+                                Gujarat:["Ahmedabad","Amreli","Anand","Aravalli","Bnaskantha (Palanpur)","Bharuch","Bhavnagar","Botad","Chotta Udepur","Dahod","Dangs (Ahwa)","Devbhooomi Dwarka","Gandhinagar","Gir Somnath","Jamnagar","Junagadh","Kachchh","kheda(Nadiad)","Mahisagar","Mehsana","Morbi","Narmada (Rajpipla)","Navsari","Panchmahal(Godhra)","Patna","Porbandar","Rajkot"],
+                                Haryana:["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Gurugram (Gurgaon)","Hisar","Jhajjar","Jind","Kaithal","Karnal","Kurukshetra","Mahendragarh","Nuh","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"],
+                                Punjab:["Amritsar","Barnala","Bathinda","Faridkot","Fatehgarh Sahib","Fazilka","Ferozepur","Gurdashpur","Hoshiarpur","Jalandhar","Kaputhala","Ludhiana","Mansa","Moga","Muktsar","Nawanshahr (Sahib Bhagat Singh Nagar)","Pathankot","Pataila","Runaga","Sahibzada Ajit Singh Nagar (Mohali)","Sangrur","Tarn Taran"],
+                                'Himanchal Pradesh':["Bilaspur","Chamba","Hamirpur","Kangra","Kinnaur","Kullu","Lahal and Spiti","Mandi","Shimla","Sirmaur(Sirmour)","Solan","Una"],
+                                Karnataka:["Bagalkot","Ballari(Bellary)","Belagavi (Belgaum)","Bengaluru (Bangalore) Rural","Bengaluru (Bangalore) Urban","Bidar","Chamarajanagar","Chikballapur","Chikkamagaluru (Chikmagalur)","Chitradurga","Dakshina Kannada","Dvangere","Dharwad","Gadag","Hasan","Haveri","Kalaburagi (Gulbarga)","Kodagu","Kolar","Koppal","Mandya","Mysuru (Mysore)","Raichur","Ramnagar","Shivamogga (Shimoga)","Tumakuru (Tumkur)","Udupi","Uttar Kannda (Karwar)","Vijayapur (Bijapur)","Yadgir"],
+                                Kerala:["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathnanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
+                                'Madhya Pradesh':["Agar Malwa","Alirajpur","Anuppur","Ashokanagar","Blaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","khargone","Mandla","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Raisen","Raigarh","Ratlam","Rewa","Sagar","Satna","Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"],
+                                'Maharashtra':["Ahmednagar","Akola","Amravati","Aurungabad","Beed","Bhandara"],
+                                Manipur:["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"],
+                                Meghalaya:["East Khasi Hills","West Garo Hills","West Jantia Hills","West Khasi Hills","East Garo Hills","Ri Boi","South Garo Hills","South West Garo Hills"],
+                                Mizoram:["Aizawl","Champal","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"],
+                                Nagaland:["Dimapur","Kiphire","Kohima","Longleng","Mokokchung","Mon","Peren","Phek","Tuensang","Wokha","Zunheboto"],
+                                Odisha:["Angul","Balagir","Balasore","Cuttack"],
+                                Rajasthan:["Ajmer","Alwar","Banswara","Jaipur"],
+                                Sikkim:["East Sikkim","North Sikkim","South Sikkim","West Sikkim"],
+                               'Tamil Nadu':["Chennai","Coimbatore","Vellore"],
+                                Telangana:["Hyderabad","Karimnagar","Warangal"],
+                                Tirpura:["Dhalai","Gomati","Khowal","North Tirupura","South Tirupura","Sepahijala","Unakoti","West Tripura"],
+                                Uttarakhand:["Almora","Bageshwar","Chamoli","Champawati","Dehradun","Haridwar","Nainital","Pauri Garhwal"],
+                               'West Bengal':["Darjeeling","Hooghly","Howrah","Jalpaiguri","Kolkata","Purulia"]
+                    }
+                                function makeSubmenu(value) {
+                                if(value.length==0) document.getElementById("District").innerHTML = "<option></option>";
+                                else {
+                                var citiesOptions = "";
+                                for(cityId in citiesByState[value])
+                                {
+                                citiesOptions+="<option>"+citiesByState[value][cityId]+"</option>";
+                                }
+                                document.getElementById("District").innerHTML = citiesOptions;
+                                }
+                                }
+
+                                </script>
+                        PINCODE<INPUT TYPE="text" maxlength="6" size="10"> <!---compulsory maxlength and size together with type text-->
+                        <br><br><br></fieldset> <br><br>
+              <fieldset>
+               <legend>PERMANENT ADDRESS</legend><br>
+                HOUSE NO. <INPUT TYPE="TEXT">
+                    ADDRESS <INPUT TYPE="TEXT">
+                        STATE <select style="width:120px; height:30px;" onchange="makeSubmenu(this.value)">
+                            <option value="">Select State</option>
+                            <option>Jharkhand</option>
+                            <option>Uttar Pradesh</option>
+                            <option>Andhra Pradesh</option>
+                            <option>Arunachal Pradesh</option>
+                            <option>Assam</option>
+                            <option>Bihar</option>
+                            <option>Chhattisgarh</option>
+                            <option>Goa</option>
+                            <option>Gujarat</option>
+                            <option>Haryana</option>
+                            <option>Punjab</option>
+                            <option>Himachal Pradesh</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                            <option>Madhya Pradesh</option>
+                            <option>Maharashtra</option>
+                            <option>Manipur</option>
+                            <option>Meghalaya</option>
+                            <option>Mizoram</option>
+                            <option>Nagaland</option>
+                            <option>Odisha</option>
+                            <option>Rajasthan</option>
+                            <option>Sikkim</option>
+                            <option>Tamil Nadu</option>
+                            <option>Telangana</option>
+                            <option>Tirpura</option>
+                            <option>Uttarakhand</option>
+                            <option>West Bengal</option>
+                        </select>
+                        DISTRICT <select id="District1" style="width:120px; height:30px;">
+                            <option value="">Select District</option>
+                            </select>
+                            <script type="text/javascript">
+
+                                var citiesByState = {
+                                Jharkhand:["Bokaro","Chatra","Deogarh","Dhanbad","Dumka","East Singhbhum","Garhwa","Giridih","Godda","Gumla","Hazaribag","Jamtara","Khunti","Koderma","Latehar","Lohardaga","Pakur","Palamu","Ramgarh","Ranchi","Sahibganj","Seraikela Kharsowan","Simdega","West Singhbhum"],
+                                'Uttar Pradesh':["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi (Chatrapati Sahuji Maharaj Nagar)","Amroha (JP Nagar)","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bhijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur (Panchsheel Nagar)","Hardoi","Hathras","Jaulan","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kanshiram Nagar (Kansganj) ","Kaushambi","Kaushinagar (Padrouna)","Lakhimpur-Kheri","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampura","Saharanpur","Sambhal (Bhim Nagar)","Sant Kabir Nagar","Shahjahanpur","Shamli (Prabuddh Nagar)","Shravasti","Siddharth Nagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"],
+                                'Andhra Pradesh': ["Anantapuram","Chittoor","East Godavari","Guntur","Krishna","Kurnool","Prakasam","Srikakulam","Sri Potti Sriramulu Nellore","Visakhapatnam","Vizianagram","West Godavari","YSR District, kadapa (Cuddapah)"],
+                                'Arunachal Pradesh':["Anjaw","Changlang","Dibang Valley","East Kameng","East Siang","Kamle","Kra Daadi","Kurung Kumey","Lepa Rada","Lohit","Longding","Lower Dibang Valley","Lower Siang","Lower Subansiri","Namsai","Pakke Kessang","Papum Pare","Shi Yomi","Siang","Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang"],
+                                Assam:["Baksa","Barpeta","Biswanath","Bongaigaon","Cachar","Charaideo","Chirang","Darrang","Dhemaji","Dhubri","Dibrugarh","Dima Hasao (North Cachar Hills)","Goalpara","Golaghat","Hailakandi","Hojai","Jorhat","Kamrup","Kamrup Metropolitian","Karbi Anglong","Karimganj","Kokrajhar","Majuli","Morigaon","Nagaon","Nalberi","Sivasagar","Sonitpur","South Salamara Mankachar","Tinsukia","Udalguri","West Kabri Anglong"],
+                                Bihar:["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxer","Darbhanga","East Champaran (Moti Hari)","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur(Bhabua)","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger(Monghyr)","Muzzaffarpur","Nalanda","Nawada","Patna","Purnia (Purnea)","Rohtas","Saharsa","Samastipur","Saran","Shekhpura","Sheohar","Sitamarhi","Siwan","Supaul","Samastipur","West Champaran"],
+                                Chhattisgarh:["Balod","Blaoda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada (South Bastar)","Durg","Gariyaband","Janjgir-Champa","Jashpur","Kabirdham(Kawardha)","Kanker(North Bastar)","Kondagaon","Korba","Korea (Koriya)","Mahasamund","Mungeli","Narayanpur","Raipur","Raigarh","Rajnandgaon","Sukma","Sura"],
+                                Goa:["North Goa","South Goa"],
+                                Gujarat:["Ahmedabad","Amreli","Anand","Aravalli","Bnaskantha (Palanpur)","Bharuch","Bhavnagar","Botad","Chotta Udepur","Dahod","Dangs (Ahwa)","Devbhooomi Dwarka","Gandhinagar","Gir Somnath","Jamnagar","Junagadh","Kachchh","kheda(Nadiad)","Mahisagar","Mehsana","Morbi","Narmada (Rajpipla)","Navsari","Panchmahal(Godhra)","Patna","Porbandar","Rajkot"],
+                                Haryana:["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Gurugram (Gurgaon)","Hisar","Jhajjar","Jind","Kaithal","Karnal","Kurukshetra","Mahendragarh","Nuh","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"],
+                                Punjab:["Amritsar","Barnala","Bathinda","Faridkot","Fatehgarh Sahib","Fazilka","Ferozepur","Gurdashpur","Hoshiarpur","Jalandhar","Kaputhala","Ludhiana","Mansa","Moga","Muktsar","Nawanshahr (Sahib Bhagat Singh Nagar)","Pathankot","Pataila","Runaga","Sahibzada Ajit Singh Nagar (Mohali)","Sangrur","Tarn Taran"],
+                                'Himanchal Pradesh':["Bilaspur","Chamba","Hamirpur","Kangra","Kinnaur","Kullu","Lahal and Spiti","Mandi","Shimla","Sirmaur(Sirmour)","Solan","Una"],
+                                Karnataka:["Bagalkot","Ballari(Bellary)","Belagavi (Belgaum)","Bengaluru (Bangalore) Rural","Bengaluru (Bangalore) Urban","Bidar","Chamarajanagar","Chikballapur","Chikkamagaluru (Chikmagalur)","Chitradurga","Dakshina Kannada","Dvangere","Dharwad","Gadag","Hasan","Haveri","Kalaburagi (Gulbarga)","Kodagu","Kolar","Koppal","Mandya","Mysuru (Mysore)","Raichur","Ramnagar","Shivamogga (Shimoga)","Tumakuru (Tumkur)","Udupi","Uttar Kannda (Karwar)","Vijayapur (Bijapur)","Yadgir"],
+                                Kerala:["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathnanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
+                                'Madhya Pradesh':["Agar Malwa","Alirajpur","Anuppur","Ashokanagar","Blaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","khargone","Mandla","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Raisen","Raigarh","Ratlam","Rewa","Sagar","Satna","Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"],
+                                'Maharashtra':["Ahmednagar","Akola","Amravati","Aurungabad","Beed","Bhandara"],
+                                Manipur:["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"],
+                                Meghalaya:["East Khasi Hills","West Garo Hills","West Jantia Hills","West Khasi Hills","East Garo Hills","Ri Boi","South Garo Hills","South West Garo Hills"],
+                                Mizoram:["Aizawl","Champal","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"],
+                                Nagaland:["Dimapur","Kiphire","Kohima","Longleng","Mokokchung","Mon","Peren","Phek","Tuensang","Wokha","Zunheboto"],
+                                Odisha:["Angul","Balagir","Balasore","Cuttack"],
+                                Rajasthan:["Ajmer","Alwar","Banswara","Jaipur"],
+                                Sikkim:["East Sikkim","North Sikkim","South Sikkim","West Sikkim"],
+                               'Tamil Nadu':["Chennai","Coimbatore","Vellore"],
+                                Telangana:["Hyderabad","Karimnagar","Warangal"],
+                                Tirpura:["Dhalai","Gomati","Khowal","North Tirupura","South Tirupura","Sepahijala","Unakoti","West Tripura"],
+                                Uttarakhand:["Almora","Bageshwar","Chamoli","Champawati","Dehradun","Haridwar","Nainital","Pauri Garhwal"],
+                               'West Bengal':["Darjeeling","Hooghly","Howrah","Jalpaiguri","Kolkata","Purulia"]
+                    }
+                                function makeSubmenu(value) {
+                                if(value.length==0) document.getElementById("District1").innerHTML = "<option></option>";
+                                else {
+                                var citiesOptions = "";
+                                for(cityId in citiesByState[value])
+                                {
+                                citiesOptions+="<option>"+citiesByState[value][cityId]+"</option>";
+                                }
+                                document.getElementById("District1").innerHTML = citiesOptions;
+                                }
+                                }
+
+                            </script>
+                        PINCODE<INPUT TYPE="text" maxlength="6" size="10"> <!---compulsory maxlength and size together with type text-->
+                        <br><br><br></fieldset>
+<br>
+             <DIV id="UNDERTAKING">
+                 <INPUT TYPE="checkbox"> Undertaking
+             </DIV>
+<br>
+             <DIV id="SUBMIT">
+              <BUTTON onclick="alert('hello')">SUBMIT</BUTTON>
+            </DIV>
+
+        </form>
+
+    </body>
+</html>
